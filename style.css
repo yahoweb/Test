@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto; /* 스크롤 허용 */
+}
+
+.start-page {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
+  overflow: auto; /* 스크롤 허용 */
+}
+
+.start-page h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.start-page p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.start-page .caution {
+  color: #ff4444; /* 빨간색 */
+  font-weight: bold;
+}
+
+.start-page button {
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.main-page {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh; /* 최소 높이를 뷰포트 높이로 설정 */
+  overflow: auto; /* 스크롤 허용 */
+}
+
+.header {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 최소 높이를 뷰포트 높이로 설정 */
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  overflow: auto; /* 스크롤 허용 */
+}
+
+#circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#circles .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: dynamicPulse infinite ease-in-out;
+  background: radial-gradient(circle, rgba(79,70,229,1) 0%, rgba(79,70,229,0) 70%), url('https://www.transparenttextures.com/patterns/noise.png');
+}
+
+@keyframes dynamicPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.timer {
+  font-size: 48px;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.heartbeat-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+#heartbeat-line {
+  stroke: red;
+  stroke-width: 2;
+  fill: none;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.start-btn, .reset-btn, .result-btn, .back-btn {
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.chart-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  overflow: auto; /* 스크롤 허용 */
+}
+
+.result-message {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#resultChart {
+  width: 300px;
+  height: 200px;
+}
+
+#music-player {
+  display: none;
+}

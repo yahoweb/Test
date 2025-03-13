@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breath Capacity Test</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- 시작 페이지 -->
+<div id="start-page" class="start-page">
+  <div class="start-content">
+    <h1>Breath Capacity Test</h1>
+    <p>
+      This website originated from a data-driven experiment titled <strong>"How does music affect smoking habits?"</strong>.<br>
+      Based on the data, Pop music was found to encourage the most smoking and prolong the habit, while City Pop music had the opposite effect, reducing smoking tendencies.<br>
+      Such smoking habits can significantly impair lung function.
+    </p>
+    <p>
+      Click the button below to check if your lungs are healthy or similar to those of a smoker.
+    </p>
+    <p class="caution">
+      <strong>Caution:</strong> Smoking causes various diseases, including heart disease.
+    </p>
+    <button id="start-test-btn">Start Test</button>
+  </div>
+</div>
+
+<!-- 기존 페이지 (처음에는 숨김) -->
+<div id="main-page" class="main-page" style="display: none;">
+  <div class="header">
+    <p id="status-message">
+      This website helps to identify the difference in lung capacity between smokers and non-smokers.<br>
+      Hold your breath at the same time as you press the start button. Press the stop button when exhaling.<br>
+      If it doesn't work, please refresh the page.
+    </p>
+    <p id="current-music"></p>
+  </div>
+
+  <div class="container" id="container">
+    <div id="circles"></div>
+    <div class="timer" id="timer">0:00</div>
+
+    <div class="heartbeat-track">
+      <svg id="heartbeat-svg" width="100%" height="100">
+        <polyline id="heartbeat-line" fill="none" stroke="red" stroke-width="2"></polyline>
+      </svg>
+    </div>
+
+    <div class="button-container">
+      <button class="start-btn" id="start-btn">Start</button>
+      <button class="reset-btn" id="reset-btn">Reset</button>
+      <button class="result-btn" id="result-btn">Results</button>
+    </div>
+  </div>
+
+  <div class="chart-container" id="chart-container">
+    <p class="result-message">
+      Smoking causes various diseases, including heart disease.<br>
+      Please take care of your health.
+    </p>
+    <canvas id="resultChart"></canvas>
+    <button class="back-btn" onclick="goBack()">Go Back to Main</button>
+  </div>
+
+  <!-- 음악 플레이어 -->
+  <div id="music-player"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
